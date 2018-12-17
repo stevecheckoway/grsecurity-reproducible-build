@@ -30,7 +30,7 @@ echo "###"
 echo "###"
 echo "### Key pair generated."
 echo "###"
-rm -f $1
+rm -f "$1"
 openssl req -new -nodes -utf8 -"$1" -days 36500 \
 	-batch -x509 -config /tmp/x509.genkey \
 	-outform PEM -out "$2" \

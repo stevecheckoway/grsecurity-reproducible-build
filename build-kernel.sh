@@ -46,7 +46,7 @@ if [ ! -e "$LINUX_TBL" ]; then
 	wget "$LINUX_SRC" -O "$LINUX_TBL_CMP"
 	wget "$LINUX_SIGN" -O "$LINUX_SIGN_FILE"
 	"$LINUX_TBL_DECMP" "$LINUX_TBL_CMP"
-	if [ "$VERIFY_GPG" != "0"]; then
+	if [ "$VERIFY_GPG" != "0" ]; then
 		gpg --verify "$LINUX_SIGN_FILE" "$LINUX_TBL"
 	else
 		true
@@ -59,7 +59,7 @@ fi
 
 # Ensure the build is clean
 rm -rf "$LINUX_DIR"
-rm -f *.deb
+rm -f -- *.deb
 
 tar xvf "$LINUX_TBL"
 

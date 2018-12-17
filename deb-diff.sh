@@ -1,6 +1,6 @@
 #! /bin/bash -e
-DEB1="$(readlink -f $1)"
-DEB2="$(readlink -f $2)"
+DEB1="$(readlink -f "$1")"
+DEB2="$(readlink -f "$2")"
 
 tempdir="$(mktemp -d)"
 
