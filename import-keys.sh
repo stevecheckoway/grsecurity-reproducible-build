@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -e
 
 # Greg Kroah-Hartman (Linux kernel stable release signing key) <greg@kroah.com>
 gpg --recv-keys 38DBBDC86092693E # Linux
