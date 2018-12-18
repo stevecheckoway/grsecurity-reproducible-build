@@ -40,7 +40,7 @@ LINUX_TBL_DECMP="unxz"
 LINUX_TBL="linux-${LINUX_VER}.tar"
 LINUX_DIR="linux-${LINUX_VER}"
 
-GRSEC_FILE="grsecurity-${GRSEC_VER}.patch"
+GRSEC_FILE="grsecurity-${GRSEC_VER}.patch.gz"
 
 if [ ! -e "$LINUX_TBL" ]; then
 	wget "$LINUX_SRC" -O "$LINUX_TBL_CMP"
@@ -65,7 +65,7 @@ tar xvf "$LINUX_TBL"
 
 cd "$LINUX_DIR"
 
-patch -Np1 -i ../"$GRSEC_FILE"
+zcat "../$GRSEC_FILE" | patch -Np1
 
 cp "$SCRIPTDIR"/fingerprint.sh .
 
